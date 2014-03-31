@@ -1,0 +1,525 @@
+{% extends "base.html" %}
+{% load inplace_edit %}
+{% block content %}
+	
+
+
+<!-- MAIN CONTENT
+		================================================== -->
+			<!-- HOME SECTION
+            ================================================== -->
+			<section id="home">
+			<div class="hero-unit">
+				<div class="slider-wrapper theme-default">
+					<div id="slider" class="nivoSlider">
+						<!-- Slider items here-->
+            <a href="#"><img src="{{ STATIC_URL }}img/homeslides/slide1.jpg" alt="" title="Lets put titles here"/></a>
+            <a href="#"><img src="{{ STATIC_URL }}img/homeslides/slide2.jpg" alt="" title="More titles!!!"/></a>
+            <a href="#"><img src="{{ STATIC_URL }}img/homeslides/slide3.jpg" alt="" title="More title"/></a>
+
+					</div>
+					    <!-- Some shadow--><img src="{{ STATIC_URL }}img/shadow.png" alt="" class="shadowslider">
+				</div>
+			</div><!-- Hero unit -->
+			</section>
+
+			<!-- ABOUT SECTION
+            ================================================== -->
+			<section id="about">
+			<div class="hero-unittext">
+				<h1>{% inplace_edit "heading_title_1.text" %}</h1>
+				<h2>{% inplace_edit "heading_title_2.text" %}</h2>
+			</div>
+			<div class="row-fluid">
+				<div class="span8">
+					
+					{% if extra_fields %}
+					<h1>{% inplace_edit "about_me_title.text" adaptor="tiny" %}</h1>
+					<p>{% inplace_edit "about_me_content.text" adaptor="tiny" %}</p>
+					{% else %}
+					<h1>{% inplace_edit "about_me_title.text|safe" %}</h1>
+					{% inplace_edit "about_me_content.text|safe" %}
+					{% endif %}
+				</div>
+				<div class="span4">
+					<div class="tdiv t5">
+						{% inplace_edit "specials.text" adaptor="tiny" %}
+					</div>
+				</div>
+			</div>
+			<br/>
+			<div class="row-fluid">
+				<div class="span4">
+					<h2>Looking for a stylist?</h2>
+                    <div id="scrolling" class="scroll-pane">
+					<p>
+						 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+					</p>
+                    <p> Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+</p>
+                        </div>
+                    </br>
+					<p class="fancystyle">
+						 Professional
+					</p>
+				</div>
+				<div class="span4">
+					<h2>Education</h2>
+                    <div id="scrolling" class="scroll-pane">
+					<p>
+                         Since graduating from the European Institute of Cosmetology in Portland Oregon, my passion for hair has expanded within ongoing education classes through the years. I have gained inspiration through training with Bumble and Bumble, Goldwell, Wella, So.Cap USA hair extensions, Keratin Complex, Oribe, Davines, Joico, Unite, and Kevin Murphy to name a few. I find that the more knowledge I collect through education, the more I can offer my clients to be on-point, precise, and up to date with current trends. I look forward to sharing my experience and expertise with you!
+					</p>
+                        </div>
+                    <br/>
+                    <p class="fancystyle">
+						 Enthusiastic
+					</p>
+
+				</div>
+				<div class="span4">
+					<h2>Services</h2>
+                    <div id="scrolling" class="services scroll-pane">
+                    <table>
+                        <tr>
+                            <td>Womens Haircut</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>Womens Wash and Style</td>
+                            <td>35</td>
+                        </tr>
+                        <tr>
+                            <td>Mens Haircut</td>
+                            <td>35</td>
+                        </tr>
+                        <tr>
+                            <td>Children's Haircut</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>Bang/Neck Trim</td>
+                            <td>10 (Complimentary Current Clients)</td>
+                        </tr>
+                        <tr>
+                            <td>Base Color</td>
+                            <td>Starts at 65</td>
+                        </tr>
+                        <tr>
+                            <td>Color All Over</td>
+                            <td>Starts at 85</td>
+                        </tr>
+                        <tr>
+                            <td>Partial Hilight</td>
+                            <td>85</td>
+                        </tr>
+                        <tr>
+                            <td>Full Hilight</td>
+                            <td>Starts at 100</td>
+                        </tr>
+                        <tr>
+                            <td>Base Color and Hilight Duo</td>
+                            <td>Starts at 110</td>
+                        </tr>
+                        <tr>
+                            <td>Keratin Smoothing Treatment</td>
+                            <td>Starts at 200</td>
+                        </tr>
+                        <tr>
+                            <td>Keratin Smoothing Treatment</td>
+                            <td>Starts at 200</td>
+                        </tr>
+                        <tr>
+                        <td>Extensions</td>
+                        <td>Require Complimentary Colsultation</td>
+                        </tr>
+                    </table>
+                        </div>
+
+                    </br>
+					<p class="fancystyle">
+						 Affordable
+					</p>
+				</div>
+			</div>
+                <div class="pagebreak">
+			</div>
+			</section>
+
+            	<!-- PORTOFOLIO SIMPLE
+            ================================================== -->
+			<section id="portofolio">
+			<div class="separator"></div><br/>
+			<div class="row-fluid">
+				<div class="span10 addspace">
+					<h1>Porfolios</h1>
+				</div>
+			</div>
+			<!-- portofolio simple row-->
+			<div class="row-fluid">
+				<div class="span4 portof">
+						<a href="{{ STATIC_URL }}portfolio.html"><img src="{{ STATIC_URL }}img/portofolio1/events.jpg" class="grayscale" alt="Event Styling" title="Event Styling"></a>
+					<div class="projectdesc">
+						<p>
+							 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum mas.
+						</p>
+						<p>
+							<a href="#" id="toggle-event" class="minibutton event">Event Portfolio</a>
+						</p>
+					</div>
+				</div>
+
+				<div class="span4 portof">
+						<img src="{{ STATIC_URL }}img/portofolio1/coloring.jpg" class="grayscale" alt="Styling Portfolio" Title="Styling Portfolio">
+					<div class="projectdesc">
+						<p>
+							 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum mas.
+						</p>
+						<p>
+							<a href="#" id="toggle-style" class="minibutton style">Styling Portfolio</a>
+						</p>
+					</div>
+				</div>
+
+				<div class="span4 portof">
+						<img src="{{ STATIC_URL }}img/portofolio1/education.jpg" class="grayscale" alt="Education Portfolio" title="Education Portfolio">
+					<div class="projectdesc">
+						<p>
+							 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum mas.
+						</p>
+						<p>
+							<a href="#" id="toggle-education"class="minibutton education">Education Portfolio</a>
+						</p>
+					</div>
+				</div>
+			</div>
+                <div class="pagebreak">
+			</div>
+			</section>
+
+            <!-- Filterable PORTFOLIO EVENTS
+            ================================================== -->
+			<div class="eventport filterable">
+                <div class="separator"></div>
+			    <div class="row-fluid">
+				<div class="span12 addspace">
+					<a href="#" id="toggle-event"><h1>Event Portfolio</h1></a>
+				</div>
+			</div>
+			    <div class="row-fluid">
+				<div class="span12 addspace">
+					<aside class="clearfix">
+					<nav class="category clearfix">
+					<ul> <!-- Define portofolio categories-->
+						<li><a href="#" class="selected" data-filter="*">All</a></li>
+						<li><a href="#" data-filter=".wedding">Wedding</a></li>
+						<li><a href="#" data-filter=".formal">Formal</a></li>
+						<li><a href="#" data-filter=".casual">Casual</a></li>
+					</ul>
+					</nav>
+					</aside>
+						<section class="main clearfix">
+						<div class="fportfolio isotope">
+						     <!-- Add images-->
+							<article class="entry formal isotope-item">
+							<a class="fancybox" rel="group" href="{{ STATIC_URL }}img/filterable/formalbrown">
+                            <img src="{{ STATIC_URL }}img/filterable/formalbrownthumb.jpg" alt=""></a>
+							<span class="hover"></span>
+							</article>
+                            <article class="entry formal isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/formalbrown2thumb.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+                            <article class="entry formal isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/formalblondethumb.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+                            <article class="entry formal isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/formalblonde2thumb.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+                            <article class="entry formal wedding formal isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/weddingthumb.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+                            <article class="entry formal wedding formal isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/wedding2thumb.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+                            <article class="entry formal wedding isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/formalblonde3thumb.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+                            <article class="entry formal isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/formalblonde4thumb.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+                            <article class="entry formal isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/formalblackthumb.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+                            <article class="entry formal isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/formalblack2thumb.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+
+
+
+						</div>
+						</section>
+				</div>
+			</div>
+                <div class="pagebreak"></div>
+			<br/>
+                </div>
+
+            <!-- Filterable PORTFOLIO STYLES
+            ================================================== -->
+			<div class="styleport">
+                <div class="separator"></div>
+			    <div class="row-fluid">
+				<div class="span12 addspace">
+					<h1>Styling Portfolio</h1>
+				</div>
+			</div>
+			    <div class="row-fluid">
+				<div class="span12 addspace">
+					<aside class="clearfix">
+					<nav class="category clearfix">
+					<ul> <!-- Define portofolio categories-->
+						<li><a href="#" class="selected" data-filter="*">All</a></li>
+						<li><a href="#" data-filter=".flowers">Flowers</a></li>
+						<li><a href="#" data-filter=".nature">Nature</a></li>
+						<li><a href="#" data-filter=".animals">Animals</a></li>
+						<li><a href="#" data-filter=".buildings">Buildings</a></li>
+						<li><a href="#" data-filter=".cities">Cities</a></li>
+					</ul>
+					</nav>
+					</aside>
+						<section class="main clearfix">
+						<div class="fportfolio isotope">
+						     <!-- Add images-->
+							<article class="entry animals buildings isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/1.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+
+							<article class="entry buildings animals isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/1.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+
+							<article class="entry flowers nature isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/1.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+
+							<article class="entry nature cities flowers isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/1.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+
+							<article class="entry animals cities buidlings isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/1.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+
+							<article class="entry buldings cities animals flowers isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/1.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+						</div>
+						</section>
+				</div>
+			</div>
+                <div class="pagebreak"></div>
+			<br/>
+                </div>
+
+            <!-- PORTFOLIO EDUCATION
+            ================================================== -->
+			<div class="educationport">
+                <div class="separator"></div>
+			    <div class="row-fluid">
+				<div class="span12 addspace">
+					<h1>Education Portfolio</h1>
+				</div>
+			</div>
+			    <div class="row-fluid">
+				<div class="span12 addspace">
+					<aside class="clearfix">
+					<nav class="category clearfix">
+					<ul> <!-- Define portofolio categories-->
+						<li><a href="#" class="selected" data-filter="*">All</a></li>
+						<li><a href="#" data-filter=".flowers">Flowers</a></li>
+						<li><a href="#" data-filter=".nature">Nature</a></li>
+						<li><a href="#" data-filter=".animals">Animals</a></li>
+						<li><a href="#" data-filter=".buildings">Buildings</a></li>
+						<li><a href="#" data-filter=".cities">Cities</a></li>
+					</ul>
+					</nav>
+					</aside>
+						<section class="main clearfix">
+						<div class="fportfolio isotope">
+						     <!-- Add images-->
+							<article class="entry animals buildings isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/1.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+
+							<article class="entry buildings animals isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/1.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+
+							<article class="entry flowers nature isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/1.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+
+							<article class="entry nature cities flowers isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/1.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+
+							<article class="entry animals cities buidlings isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/1.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+
+							<article class="entry buldings cities animals flowers isotope-item">
+							<img src="{{ STATIC_URL }}img/filterable/1.jpg" alt="">
+							<span class="hover"></span>
+							</article>
+						</div>
+						</section>
+				</div>
+			</div>
+                <div class="pagebreak"></div>
+			<br/>
+                </div>
+
+
+			<!-- SERVICES
+            ================================================== -->
+			<section id="services">
+			<div class="separator"></div><br/>
+			<div class="row-fluid">
+				<div class="span12">
+					<h1>SERVICES</h1>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span6">
+					<span class="servicetitle">Event Styling</span>
+					<p>
+						 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
+					</p>
+					<p>
+						 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
+					</p>
+				</div>
+				<div class="span6">
+					<span class="servicetitle">Cutting</span>
+					<p>
+						 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
+					</p>
+					<p>
+						 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
+					</p>
+				</div>
+			</div>
+			<br/>
+			<div class="row-fluid">
+				<div class="span6">
+					<span class="servicetitle">Coloring</span>
+					<p>
+						 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
+					</p>
+					<p>
+						 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
+					</p>
+				</div>
+				<div class="span6">
+					<span class="servicetitle">Extensions</span>
+					<p>
+						 I am currently available for your next project.Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh. Use my contact form for a free quote!
+					</p>
+					<p>
+						 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
+					</p>
+				</div>
+			</div>
+			</section>
+			<div class="pagebreak">
+			</div>
+
+
+
+			<!-- CONTACT
+			================================================== -->
+			<section id="contact">
+			<div class="separator"></div><br/>
+			<div class="row-fluid">
+				<div class="addspace span6">
+					<h1>Contact Lauren</h1>
+				</div>
+			</div>
+			<div class="row-fluid" style="min-height:520px;">
+				<div class="span5">
+					<div class="done">
+						<div class="alert alert-success">
+							<button type="button" class="close" data-dismiss="alert">x</button>
+							<strong>Message sent successfully!</strong><br/>
+						</div>
+					</div>
+					<div class="form">
+						<form method="post" action="contact.php" id="contactform">
+							<table>
+							<tbody>
+							<tr class="element">
+								<td class="noborder">
+								</td>
+								<td class="noborder">
+									 <!-- Name--><input type="text" name="name" class="text input-xxlarge" placeholder="Name">
+								</td>
+							</tr>
+							<tr class="element">
+								<td class="noborder">
+								</td>
+								<td class="noborder">
+									 <!-- Email--><input type="text" name="email" class="text input-xxlarge" placeholder="E-mail address">
+								</td>
+							</tr>
+							<tr class="element texttop">
+								<td class="noborder">
+								</td>
+								<td class="noborder">
+									 <!-- Message--><textarea name="comment" class="text textarea input-xxlarge" rows="7" placeholder="Message, comments, feedback"></textarea>
+								</td>
+							</tr>
+							<tr class="element">
+								<td class="noborder">
+									 &nbsp;
+								</td>
+								<td class="noborder">
+									 <!-- Submit--><input type="submit" id="submit" class="btn" value="Submit">
+									<div class="loading">
+									</div>
+								</td>
+							</tr>
+							</tbody>
+							</table>
+						</form>
+					</div>
+				</div>
+
+				<div class="span6">
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2795.214739026603!2d-122.64536749999999!3d45.5258841!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5495a0b9f330d8e9%3A0x56bdc74cb553dc53!2sHalo!5e0!3m2!1sen!2sus!4v1395131838101" width="100%" height="200px" frameborder="0" style="border:0"></iframe></div>
+		</div>
+
+            </section>
+		<br/>
+
+
+
+{% endblock %}
