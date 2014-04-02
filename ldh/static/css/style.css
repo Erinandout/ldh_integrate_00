@@ -578,9 +578,9 @@ h2 {
 	line-height:40px;
 }
 h3 {
-	font-size:24px;
+	font-size:36px;
 	line-height:40px;
-	    font-family: 'Montez', cursive;
+	font-family: 'Montez', cursive;
 
 }
 h4 {
@@ -1215,13 +1215,13 @@ legend+.control-group {
 	text-align:right;
 }
 .form-horizontal .controls {
-	*display:inline-block;
-	*padding-left:20px;
+	display:inline-block;
+	padding-left:20px;
 	margin-left:160px;
-	*margin-left:0;
+	margin-left:0;
 }
 .form-horizontal .controls:first-child {
-	*padding-left:160px;
+	padding-left:160px;
 }
 .form-horizontal .help-block {
 	margin-top:10px;
@@ -1231,7 +1231,6 @@ legend+.control-group {
 	padding-left:160px;
 }
 table {
-	max-width:100%;
 	background-color:transparent;
 	border-collapse:collapse;
 	border-spacing:0;
@@ -1265,7 +1264,7 @@ table {
 .table-bordered {
 	border:1px solid #dddddd;
 	border-collapse:separate;
-	*border-collapse:collapse;
+	border-collapse:collapse;
 	border-left:0;
 	-webkit-border-radius:4px;
 	-moz-border-radius:4px;

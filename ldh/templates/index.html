@@ -13,9 +13,9 @@
 				<div class="slider-wrapper theme-default">
 					<div id="slider" class="nivoSlider">
 						<!-- Slider items here-->
-            <a href="#"><img src="{{ STATIC_URL }}img/homeslides/slide1.jpg" alt="" title="Lets put titles here"/></a>
-            <a href="#"><img src="{{ STATIC_URL }}img/homeslides/slide2.jpg" alt="" title="More titles!!!"/></a>
-            <a href="#"><img src="{{ STATIC_URL }}img/homeslides/slide3.jpg" alt="" title="More title"/></a>
+            <a href="#"><img src="{{ STATIC_URL }}img/homeslides/slide1.jpg" alt=""/></a>
+            <a href="#"><img src="{{ STATIC_URL }}img/homeslides/slide2.jpg" alt=""/></a>
+            <a href="#"><img src="{{ STATIC_URL }}img/homeslides/slide3.jpg" alt=""/></a>
 
 					</div>
 					    <!-- Some shadow--><img src="{{ STATIC_URL }}img/shadow.png" alt="" class="shadowslider">
@@ -35,7 +35,7 @@
 					
 					{% if extra_fields %}
 					<h1>{% inplace_edit "about_me_title.text" adaptor="tiny" %}</h1>
-					<p>{% inplace_edit "about_me_content.text" adaptor="tiny" %}</p>
+					{% inplace_edit "about_me_content.text" adaptor="tiny" %}
 					{% else %}
 					<h1>{% inplace_edit "about_me_title.text|safe" %}</h1>
 					{% inplace_edit "about_me_content.text|safe" %}
@@ -53,7 +53,7 @@
 					{% if extra_fields %}
 					<h2>{% inplace_edit "contact_title.text" adaptor="tiny" %}</h2>
 					<div id="scrolling" class="scroll-pane">
-					<p>{% inplace_edit "contact_content.text" adaptor="tiny" %}</p>
+					{% inplace_edit "contact_content.text" adaptor="tiny" %}
 					</div>					
 					{% else %}
 					<h2>{% inplace_edit "contact_title.text" adaptor="tiny" %}</h2>
@@ -62,7 +62,6 @@
 					</div>					
 					{% endif %}
 					</br>
-					<p class="fancystyle">Professional</p>
 				</div>
 
 				<div class="span4">
@@ -78,7 +77,6 @@
 					</div>
 					{% endif %}
 					<br/>
-					<p class="fancystyle">Enthusiastic</p>
 				</div>
 				<div class="span4">
 					{%if extra_fields %}
@@ -93,21 +91,32 @@
 					</div>
 					{% endif %}					
 					</br>
-					<p class="fancystyle">Affordable</p>
 				</div>
-				
 				</div>
-
+			<div class="row-fluid">
+				<div class="span4">
+					{% inplace_edit "highlight.text" adaptor="tiny" %}
+				</div>
+				<div class="span4">
+					{% inplace_edit "highlight1.text" adaptor="tiny" %}
+				</div>
+				<div class="span4">
+					{% inplace_edit "highlight2.text" adaptor="tiny" %}
+				</div>
+			</div>
 			<div class="pagebreak"></div>
 			</section>
-
             	<!-- PORTOFOLIO SIMPLE
             ================================================== -->
 			<section id="portofolio">
 			<div class="separator"></div><br/>
 			<div class="row-fluid">
 				<div class="span10 addspace">
-					<h1>Porfolios</h1>
+					{%if extra_fields %}
+					<h1>{% inplace_edit "portfolio_title.text" adaptor="tiny" %}</h1>
+					{% else %}
+					<h1>{% inplace_edit "portfolio_title.text|safe" %}</h1>
+					{% endif %}
 				</div>
 			</div>
 			<!-- portofolio simple row-->
@@ -115,9 +124,11 @@
 				<div class="span4 portof">
 						<a href="{{ STATIC_URL }}portfolio.html"><img src="{{ STATIC_URL }}img/portofolio1/events.jpg" class="grayscale" alt="Event Styling" title="Event Styling"></a>
 					<div class="projectdesc">
-						<p>
-							 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum mas.
-						</p>
+						{%if extra_fields %}
+						{% inplace_edit "portfolio_1_content.text" adaptor="tiny" %}
+						{% else %}
+						{% inplace_edit "portfolio_1_content.text|safe" %}
+						{% endif %}
 						<p>
 							<a href="#" id="toggle-event" class="minibutton event">Event Portfolio</a>
 						</p>
@@ -127,9 +138,11 @@
 				<div class="span4 portof">
 						<img src="{{ STATIC_URL }}img/portofolio1/coloring.jpg" class="grayscale" alt="Styling Portfolio" Title="Styling Portfolio">
 					<div class="projectdesc">
-						<p>
-							 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum mas.
-						</p>
+						{%if extra_fields %}
+						{% inplace_edit "portfolio_2_content.text" adaptor="tiny" %}
+						{% else %}
+						{% inplace_edit "portfolio_2_content.text|safe" %}
+						{% endif %}
 						<p>
 							<a href="#" id="toggle-style" class="minibutton style">Styling Portfolio</a>
 						</p>
@@ -139,9 +152,11 @@
 				<div class="span4 portof">
 						<img src="{{ STATIC_URL }}img/portofolio1/education.jpg" class="grayscale" alt="Education Portfolio" title="Education Portfolio">
 					<div class="projectdesc">
-						<p>
-							 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum mas.
-						</p>
+						{%if extra_fields %}
+						{% inplace_edit "portfolio_3_content.text" adaptor="tiny" %}
+						{% else %}
+						{% inplace_edit "portfolio_3_content.text|safe" %}
+						{% endif %}
 						<p>
 							<a href="#" id="toggle-education"class="minibutton education">Education Portfolio</a>
 						</p>
@@ -361,48 +376,48 @@
 			<div class="separator"></div><br/>
 			<div class="row-fluid">
 				<div class="span12">
-					<h1>SERVICES</h1>
+					<h1>{% inplace_edit "services2_title.text" adaptor="tiny" %}</h1>
 				</div>
 			</div>
 			<div class="row-fluid">
 				<div class="span6">
-					<span class="servicetitle">Event Styling</span>
-					<p>
-						 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
-					</p>
-					<p>
-						 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
-					</p>
+					{% if extra_fields %}
+					{% inplace_edit "services_sub_1_title.text" adaptor="tiny" %}
+					{% inplace_edit "services_sub_1_content.text" 	adaptor="tiny" %}
+					{% else %}
+					{% inplace_edit "services_sub_1_title.text|safe" %}
+					{% inplace_edit "services_sub_1_content.text|safe" %}
+					{% endif %}
 				</div>
 				<div class="span6">
-					<span class="servicetitle">Cutting</span>
-					<p>
-						 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
-					</p>
-					<p>
-						 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
-					</p>
+					{% if extra_fields %}
+					{% inplace_edit "services_sub_2_title.text" adaptor="tiny" %}
+					{% inplace_edit "services_sub_2_content.text" adaptor="tiny" %}
+					{% else %}
+					{% inplace_edit "services_sub_2_title.text|safe" %}
+					{% inplace_edit "services_sub_2_content.text|safe" %}
+					{% endif %}
 				</div>
 			</div>
 			<br/>
 			<div class="row-fluid">
 				<div class="span6">
-					<span class="servicetitle">Coloring</span>
-					<p>
-						 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
-					</p>
-					<p>
-						 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
-					</p>
+					{% if extra_fields %}
+					{% inplace_edit "services_sub_3_title.text" adaptor="tiny" %}
+					{% inplace_edit "services_sub_3_content.text" adaptor="tiny" %}
+					{% else %}
+					{% inplace_edit "services_sub_3_title.text|safe" %}
+					{% inplace_edit "services_sub_3_content.text|safe" %}
+					{% endif %}
 				</div>
 				<div class="span6">
-					<span class="servicetitle">Extensions</span>
-					<p>
-						 I am currently available for your next project.Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh. Use my contact form for a free quote!
-					</p>
-					<p>
-						 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
-					</p>
+					{% if extra_fields %}
+					{% inplace_edit "services_sub_4_title.text" adaptor="tiny" %}
+					{% inplace_edit "services_sub_4_content.text" adaptor="tiny" %}
+					{% else %}
+					{% inplace_edit "services_sub_4_title.text|safe" %}
+					{% inplace_edit "services_sub_4_content.text|safe" %}
+					{% endif %}
 				</div>
 			</div>
 			</section>
@@ -420,8 +435,8 @@
 					<h1>Contact Lauren</h1>
 				</div>
 			</div>
-			<div class="row-fluid" style="min-height:520px;">
-				<div class="span5">
+			<div class="row-fluid">
+				<div class="span7">
 					<div class="done">
 						<div class="alert alert-success">
 							<button type="button" class="close" data-dismiss="alert">x</button>
@@ -469,9 +484,10 @@
 					</div>
 				</div>
 
-				<div class="span6">
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2795.214739026603!2d-122.64536749999999!3d45.5258841!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5495a0b9f330d8e9%3A0x56bdc74cb553dc53!2sHalo!5e0!3m2!1sen!2sus!4v1395131838101" width="100%" height="200px" frameborder="0" style="border:0"></iframe></div>
-		</div>
+				<div class="span5">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2795.214739026603!2d-122.64536749999999!3d45.5258841!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5495a0b9f330d8e9%3A0x56bdc74cb553dc53!2sHalo!5e0!3m2!1sen!2sus!4v1395131838101" width="100%" height="200px" frameborder="0" style="border:0"></iframe>
+				</div>
+			</div>
 
             </section>
 		<br/>

@@ -1,5 +1,4 @@
 body {
-  padding-top: 50px;
   padding-bottom: 30px;
 }
 
@@ -11,4 +10,11 @@ body {
 
 .theme-showcase > p > .btn {
   margin: 5px 0;
+}
+.highlight{
+font-family: 'Montez', cursive;
+text-align: center;
+font-size:36px;
+  
+  
 }

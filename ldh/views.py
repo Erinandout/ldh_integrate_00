@@ -28,6 +28,27 @@ def index(request):
     education_content = get_object_or_404(Chunk, key ="education_content")
     services_title = get_object_or_404(Title, key ="services_title")
     services_content = get_object_or_404(Chunk, key ="services_content")
+    services2_title = get_object_or_404(Title, key ="services2_title")
+    services_sub_1_title = get_object_or_404(Title, key ="services_sub_1_title")
+    services_sub_1_content = get_object_or_404(Chunk, key ="services_sub_1_content")
+    services_sub_2_title = get_object_or_404(Title, key ="services_sub_2_title")
+    services_sub_2_content = get_object_or_404(Chunk, key ="services_sub_2_content")
+    services_sub_3_title = get_object_or_404(Title, key ="services_sub_3_title")
+    services_sub_3_content = get_object_or_404(Chunk, key ="services_sub_3_content")
+    services_sub_4_title = get_object_or_404(Title, key ="services_sub_4_title")
+    services_sub_4_content = get_object_or_404(Chunk, key ="services_sub_4_content")
+    portfolio_title = get_object_or_404(Title, key ="portfolio_title")
+    portfolio_1_content = get_object_or_404(Chunk, key ="portfolio_1_content")
+    portfolio_2_content = get_object_or_404(Chunk, key ="portfolio_2_content")
+    portfolio_3_content = get_object_or_404(Chunk, key ="portfolio_3_content")
+    highlight = get_object_or_404(Title, key ="highlight")
+    highlight1 = get_object_or_404(Title, key ="highlight1")
+    highlight2 = get_object_or_404(Title, key ="highlight2")
+
+
+
+
+
 
 
 
@@ -46,7 +67,23 @@ def index(request):
                                'education_title' : education_title,
                                'education_content' : education_content,
                                'services_title' : services_title,
-                               'services_content' : services_content
+                               'services_content' : services_content,
+                               'services2_title' : services2_title,
+                               'services_sub_1_content' : services_sub_1_content,
+                               'services_sub_2_content' : services_sub_2_content,
+                               'services_sub_3_content' : services_sub_3_content,
+                               'services_sub_4_content' : services_sub_4_content,
+                               'services_sub_1_title' : services_sub_1_title,
+                               'services_sub_2_title' : services_sub_2_title,
+                               'services_sub_3_title' : services_sub_3_title,
+                               'services_sub_4_title' : services_sub_4_title,
+                               'portfolio_title' : portfolio_title,
+                               'portfolio_1_content' : portfolio_1_content,                               
+                               'portfolio_2_content' : portfolio_2_content,
+                               'portfolio_3_content' : portfolio_3_content,
+                               'highlight' : highlight,
+                               'highlight1' : highlight1,
+                               'highlight2' : highlight2,
                                 },
                               context_instance=RequestContext(request))
 
@@ -86,7 +123,9 @@ def example(request):
                                'thumbnail_title': thumbnail_title,
                                'chunk_well_content': chunk_well_content,
                                'extra_fields': extra_fields,
+                               
                                'sorl_thumbnail': sorl_thumbnail},
+                              
                               context_instance=RequestContext(request))
 
 
