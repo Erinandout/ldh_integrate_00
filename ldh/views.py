@@ -22,6 +22,14 @@ def index(request):
     about_me_title = get_object_or_404(Title, key ="about_me_title")
     about_me_content = get_object_or_404(Chunk, key ="about_me_content")
     specials = get_object_or_404(Chunk, key ="specials")
+    contact_title = get_object_or_404(Title, key ="contact_title")
+    contact_content = get_object_or_404(Chunk, key ="contact_content")
+    education_title = get_object_or_404(Title, key ="education_title")
+    education_content = get_object_or_404(Chunk, key ="education_content")
+    services_title = get_object_or_404(Title, key ="services_title")
+    services_content = get_object_or_404(Chunk, key ="services_content")
+
+
 
 
 
@@ -32,7 +40,14 @@ def index(request):
                                'about_me_title' : about_me_title,
                                'about_me_content' : about_me_content,
                                'specials' : specials,
-                                'extra_fields' : extra_fields},
+                               'contact_title' : contact_title,
+                               'contact_content' : contact_content,
+                               'extra_fields' : extra_fields,
+                               'education_title' : education_title,
+                               'education_content' : education_content,
+                               'services_title' : services_title,
+                               'services_content' : services_content
+                                },
                               context_instance=RequestContext(request))
 
 

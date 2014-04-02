@@ -50,99 +50,55 @@
 			<br/>
 			<div class="row-fluid">
 				<div class="span4">
-					<h2>Looking for a stylist?</h2>
-                    <div id="scrolling" class="scroll-pane">
-					<p>
-						 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-					</p>
-                    <p> Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-</p>
-                        </div>
-                    </br>
-					<p class="fancystyle">
-						 Professional
-					</p>
+					{% if extra_fields %}
+					<h2>{% inplace_edit "contact_title.text" adaptor="tiny" %}</h2>
+					<div id="scrolling" class="scroll-pane">
+					<p>{% inplace_edit "contact_content.text" adaptor="tiny" %}</p>
+					</div>					
+					{% else %}
+					<h2>{% inplace_edit "contact_title.text" adaptor="tiny" %}</h2>
+					<div id="scrolling" class="scroll-pane">
+					{% inplace_edit "contact_content.text" adaptor="tiny" %}
+					</div>					
+					{% endif %}
+					</br>
+					<p class="fancystyle">Professional</p>
+				</div>
+
+				<div class="span4">
+					{%if extra_fields %}
+					<h2>{% inplace_edit "education_title.text" adaptor="tiny" %}</h2>
+					<div id="scrolling" class="scroll-pane">
+					{% inplace_edit "education_content.text" adaptor="tiny" %}
+					</div>
+					{% else %}
+					<h2>{% inplace_edit "education_title.text" adaptor="tiny" %}</h2>
+					<div id="scrolling" class="scroll-pane">
+					{% inplace_edit "education_content.text" adaptor="tiny" %}
+					</div>
+					{% endif %}
+					<br/>
+					<p class="fancystyle">Enthusiastic</p>
 				</div>
 				<div class="span4">
-					<h2>Education</h2>
-                    <div id="scrolling" class="scroll-pane">
-					<p>
-                         Since graduating from the European Institute of Cosmetology in Portland Oregon, my passion for hair has expanded within ongoing education classes through the years. I have gained inspiration through training with Bumble and Bumble, Goldwell, Wella, So.Cap USA hair extensions, Keratin Complex, Oribe, Davines, Joico, Unite, and Kevin Murphy to name a few. I find that the more knowledge I collect through education, the more I can offer my clients to be on-point, precise, and up to date with current trends. I look forward to sharing my experience and expertise with you!
-					</p>
-                        </div>
-                    <br/>
-                    <p class="fancystyle">
-						 Enthusiastic
-					</p>
-
+					{%if extra_fields %}
+					<h2>{% inplace_edit "services_title.text" adaptor="tiny" %}</h2>
+					<div id="scrolling" class="services scroll-pane">
+					{% inplace_edit "services_content.text" adaptor="tiny" %}
+					</div>
+					{% else %}
+					<h2>{% inplace_edit "services_title.text" adaptor="tiny" %}</h2>
+					<div id="scrolling" class="services scroll-pane">
+					{% inplace_edit "services_content.text" adaptor="tiny" %}
+					</div>
+					{% endif %}					
+					</br>
+					<p class="fancystyle">Affordable</p>
 				</div>
-				<div class="span4">
-					<h2>Services</h2>
-                    <div id="scrolling" class="services scroll-pane">
-                    <table>
-                        <tr>
-                            <td>Womens Haircut</td>
-                            <td>50</td>
-                        </tr>
-                        <tr>
-                            <td>Womens Wash and Style</td>
-                            <td>35</td>
-                        </tr>
-                        <tr>
-                            <td>Mens Haircut</td>
-                            <td>35</td>
-                        </tr>
-                        <tr>
-                            <td>Children's Haircut</td>
-                            <td>25</td>
-                        </tr>
-                        <tr>
-                            <td>Bang/Neck Trim</td>
-                            <td>10 (Complimentary Current Clients)</td>
-                        </tr>
-                        <tr>
-                            <td>Base Color</td>
-                            <td>Starts at 65</td>
-                        </tr>
-                        <tr>
-                            <td>Color All Over</td>
-                            <td>Starts at 85</td>
-                        </tr>
-                        <tr>
-                            <td>Partial Hilight</td>
-                            <td>85</td>
-                        </tr>
-                        <tr>
-                            <td>Full Hilight</td>
-                            <td>Starts at 100</td>
-                        </tr>
-                        <tr>
-                            <td>Base Color and Hilight Duo</td>
-                            <td>Starts at 110</td>
-                        </tr>
-                        <tr>
-                            <td>Keratin Smoothing Treatment</td>
-                            <td>Starts at 200</td>
-                        </tr>
-                        <tr>
-                            <td>Keratin Smoothing Treatment</td>
-                            <td>Starts at 200</td>
-                        </tr>
-                        <tr>
-                        <td>Extensions</td>
-                        <td>Require Complimentary Colsultation</td>
-                        </tr>
-                    </table>
-                        </div>
-
-                    </br>
-					<p class="fancystyle">
-						 Affordable
-					</p>
+				
 				</div>
-			</div>
-                <div class="pagebreak">
-			</div>
+
+			<div class="pagebreak"></div>
 			</section>
 
             	<!-- PORTOFOLIO SIMPLE
